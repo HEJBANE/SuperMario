@@ -1,0 +1,25 @@
+
+body{
+        background-color: #6b9efc ;
+        background-image: url("../images/bg.gif");
+        background-attachment: fixed;
+    }
+
+.button{
+            width: 90px;
+            height: 30px;
+            transition-duration: 0.4s;  
+        }
+
+.button:hover{
+            background-color: #4CAF50;
+            color: white;
+            }
+
+.floor{
+            width:1500px;
+            height:57px; 
+            position:absolute;
+            top:400px;
+            left:0px
+        }
