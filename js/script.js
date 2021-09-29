@@ -7,6 +7,29 @@ var y=170;
 var sign='';
 document.onkeydown  = getKeystart;
 document.onkeyup    = getKeyend;
+function play()
+{
+    if(Math.abs(dx)==5){
+        x+=dx;
+        if (pos==1)
+        {
+            pos=0;
+            if (dx==5){
+                sign='';
+            }else{
+                sign='1';
+            }
+            document.getElementById('hero').innerHTML='<img src=hero'+sign+'0.gif>';
+        }
+        else{
+            pos=1;document.getElementById('hero').innerHTML='<img src=hero'+sign+'1.gif>';
+        }
+    }
+    document.getElementById('hero').style.left=x;
+    document.getElementById('hero').style.top=y-dy;
+    window.scrollTo(x-200,0);
+    setTimeout("play()",50);
+}
 
 function getKeystart(keyStroke){
 
