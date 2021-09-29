@@ -3,6 +3,8 @@ body{
         background-color: #6b9efc ;
         background-image: url("../images/bg.gif");
         background-attachment: fixed;
+        position: relative;
+        
     }
 
 .button{
@@ -20,6 +22,14 @@ body{
             width:1500px;
             height:57px; 
             position:absolute;
-            top:400px;
+            top:203px;
             left:0px
         }
+
+    #hero
+    {
+            position:absolute;
+            top:170px;
+            left:40px;
+    }
+
