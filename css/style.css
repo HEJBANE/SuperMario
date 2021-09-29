@@ -1,7 +1,7 @@
 
 body{
         background-color: #6b9efc ;
-        background-image: url("../images/bg.gif");
+        /*background-image: url("../images/bg.gif");*/
         background-attachment: fixed;
         position: relative;
         
@@ -19,11 +19,12 @@ body{
             }
 
 .floor{
-            width:1500px;
-            height:57px; 
+            width:1503px;
+            height:80px; 
             position:absolute;
-            top:203px;
+            top:223px;
             left:0px
+            
         }
 
     #hero
@@ -31,5 +32,12 @@ body{
             position:absolute;
             top:170px;
             left:40px;
+    }
+
+    .hero
+    {
+            width:40px;
+
+
     }
 

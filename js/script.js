@@ -9,6 +9,18 @@ document.onkeydown  = getKeystart;
 document.onkeyup    = getKeyend;
 function play()
 {
+    if (t!=-50  ){
+        t++;
+        if(dy>0){
+        dy-=t;
+        }
+        else
+        {
+            dy=0;
+            t=-50;
+            
+        }
+    }
     if(Math.abs(dx)==5){
         x+=dx;
         if (pos==1)
@@ -19,10 +31,10 @@ function play()
             }else{
                 sign='1';
             }
-            document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'0.gif>';
+            document.getElementById('hero').innerHTML='<img style="width:40px" src=images/hero'+sign+'0.gif>';
         }
         else{
-            pos=1;document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'1.gif>';
+            pos=1;document.getElementById('hero').innerHTML='<img style="width:40px" src=images/hero'+sign+'1.gif>';
         }
     }
     document.getElementById('hero').style.left=x;
@@ -36,10 +48,18 @@ function getKeystart(keyStroke){
 isNetscape=(document.getElementById && !document.all);
 touche = (isNetscape) ? keyStroke.which : event.keyCode;
 if ((touche==37))
-{dx=-5;}
+{
+    dx=-5;
+}
 if ((touche==39))
-{dx=5;}
-if ((touche==38) && (t==-50)){t=-12;}
+{
+    dx=5;
+}
+if ((touche==38) && (t==-50))
+{
+    t=-12;
+    dy=-t;
+}
 }
 
 function getKeyend(keyStroke){  
