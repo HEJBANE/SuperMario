@@ -19,10 +19,10 @@ function play()
             }else{
                 sign='1';
             }
-            document.getElementById('hero').innerHTML='<img src=hero'+sign+'0.gif>';
+            document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'0.gif>';
         }
         else{
-            pos=1;document.getElementById('hero').innerHTML='<img src=hero'+sign+'1.gif>';
+            pos=1;document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'1.gif>';
         }
     }
     document.getElementById('hero').style.left=x;
