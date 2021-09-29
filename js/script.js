@@ -18,3 +18,12 @@ if ((touche==39))
 {dx=5;}
 if ((touche==38) && (t==-50)){t=-12;}
 }
+
+function getKeyend(keyStroke){  
+isNetscape=(document.getElementById && !document.all);
+touche = (isNetscape) ? keyStroke.which : event.keyCode;
+if ((touche==37))
+{dx=0;}
+if ((touche==39))
+{dx=0;}
+}
