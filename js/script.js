@@ -75,12 +75,12 @@ function play(){
         this.location='index.html';
     }
     else{
-        if ((t==-50)&&(crocs[Math.round(x/19.5)]!=300)&&(crocs[Math.round(x/19.5)]!=301)||(y-dy>350)){
+        if ((t==-50)&&(crocs[Math.round(x/19.99)]!=300)&&(crocs[Math.round(x/19.99)]!=301)||(y-dy>350)){
             let fin = Date.now();
             let duree = fin - debut;
             var seconds = ((duree % 60000) / 1000).toFixed(0);
             alert('Tu as perdu ! Avec un score de:'+ (x-70)+' et un temps de: '+ seconds+' secondes');
-        
+            debut=Date.now();
             x=40;
             pos=0;
             dx=0;
