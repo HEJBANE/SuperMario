@@ -1,9 +1,24 @@
+
+mat= new Array(204,204,204,204,160,116,116,116,116,160,204,204,204,204,116,116,116,116,116,116,116,116,160,116,160,160,116,116,160,116,160,116,72,160,116,72,116,160,160,72,116,72,116,160,204,204,160,116,72,160,116,204,72,116,160,160,116,72,116,160,204,116,160,160,72,116,204,160,204,160,116,72,116,160,204);         
+//44 pour monter descendre
+crocs= new Array(300,300,300,300,300,300,300,300,300,300,204,204,204,204,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,204,204,300,300,300,300,300,300,300,300,160,160,300,300,300,300,300,300,160,160,300,300,300,300,300,300,300,300,300,300,301);
+for(i=0;i<=74;i++){
+if (mat[i]!=300){
+document.write('<img src=images/floor2.gif style="position:absolute;top:'+mat[i]+'px;left:'+i*20+'px">');}
+if (crocs[i]==301){
+crocs[i]=mat[i]-24;
+document.write('<img src=images/fin.gif style="position:absolute;top:'+crocs[i]+'px;left:'+i*20+'px">');
+crocs[i]=301;}
+if ((crocs[i]!=300)&&(crocs[i]!=301)){
+crocs[i]-=11;
+document.write('<img src=images/croco.gif style="position:absolute;top:'+crocs[i]+'px;left:'+i*20+'px">');}}
+
 var x=40;
 var pos=0;
 var dx=0;
 var dy=0;
 var t=-50;
-var y=170;
+var y=150;
 var sign='';
 document.onkeydown  = getKeystart;
 document.onkeyup    = getKeyend;
