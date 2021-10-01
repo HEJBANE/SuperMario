@@ -23,7 +23,14 @@ var y=300;
 var sign='';
 document.onkeydown  = getKeystart;
 document.onkeyup    = getKeyend;
-function play(){                
+let ok=1;
+let debut=Date.now();
+function play(){   
+    if (ok==1){
+     debut== Date.now();
+    console.log(debut);
+    ok=0;
+    }    
     if (t!=-50){
         t++;dy-=t;
     }
@@ -60,12 +67,18 @@ function play(){
     document.getElementById('hero').style.top=y-dy;
     window.scrollTo(x-200,0);
     if (x>=1480){
-        alert('Bravo! tu as gagné ce niveau !');
+        let fin = Date.now();
+        let duree = fin - debut;
+        alert('Bravo! tu as gagne ce niveau! Avec un temps de: '+ durre+ ' millisecondes');
+    
         this.location='index.html';
     }
     else{
         if ((t==-50)&&(crocs[Math.round(x/19.5)]!=300)&&(crocs[Math.round(x/19.5)]!=301)||(y-dy>350)){
-            alert('Tu as perdu !');
+            let fin = Date.now();
+            let duree = fin - debut;
+            alert('Tu as perdu ! Avec un score de:'+ (x-70)+' et un temps de: '+ duree+' millisecondes');
+        
             x=40;
             pos=0;
             dx=0;
