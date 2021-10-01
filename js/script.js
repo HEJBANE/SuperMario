@@ -18,70 +18,81 @@ var pos=0;
 var dx=0;
 var dy=0;
 var t=-50;
-var y=150;
+var y=170;
 var sign='';
 document.onkeydown  = getKeystart;
 document.onkeyup    = getKeyend;
-function play()
-{
-    if (t!=-50  ){
-        t++;
-        if(dy>0){
-        dy-=t;
-        }
-        else
-        {
-            dy=0;
-            t=-50;
-            
-        }
+function play(){                
+    if (t!=-50){
+        t++;dy-=t;
     }
+    if ((y-dy>=mat[Math.round(x/20)]-37)&&(y-dy<=mat[Math.round(x/20)]-27))
+    {
+    t=-50;dy=0;y=mat[Math.round(x/20)]-34;
+    }
+    else
+    {
+    if ((y-dy<mat[Math.round(x/20)]-37)&&(t==-50)){t=1;
+    }
+    if ((y-dy>mat[Math.round(x/20)]-27)&&(t==-50))
+    {
+    t=1;
+    }}
     if(Math.abs(dx)==5){
         x+=dx;
-        if (pos==1)
-        {
+        if (pos==1){
             pos=0;
             if (dx==5){
                 sign='';
-            }else{
+            }
+            else{
                 sign='1';
             }
-            document.getElementById('hero').innerHTML='<img style="width:40px" src=images/hero'+sign+'0.gif>';
+            document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'0.gif>';
         }
         else{
-            pos=1;document.getElementById('hero').innerHTML='<img style="width:40px" src=images/hero'+sign+'1.gif>';
+            pos=1;
+            document.getElementById('hero').innerHTML='<img src=images/hero'+sign+'1.gif>';
         }
     }
     document.getElementById('hero').style.left=x;
     document.getElementById('hero').style.top=y-dy;
     window.scrollTo(x-200,0);
-    setTimeout("play()",50);
+    if (x>=1480){
+        alert('Bravo! tu as gagné ce niveau !');
+        this.location='index.html';
+    }
+    else{
+        if ((t==-50)&&(crocs[Math.round(x/20)]!=300)&&(crocs[Math.round(x/20)]!=301)||(y-dy>200)){
+            alert('Tu as perdu !');
+            x=40;
+            pos=0;
+            dx=0;
+            dy=0;t=-50;
+            y=170;
+            sign='';
+            window.scrollTo(0,0);
+        }
+        setTimeout("play()",50);
+    }
 }
 
-function getKeystart(keyStroke){
+    function getKeystart(keyStroke)    {
 
-isNetscape=(document.getElementById && !document.all);
-touche = (isNetscape) ? keyStroke.which : event.keyCode;
-if ((touche==37))
-{
-    dx=-5;
-}
-if ((touche==39))
-{
-    dx=5;
-}
-if ((touche==38) && (t==-50))
-{
-    t=-12;
-    dy=-t;
-}
-}
-
-function getKeyend(keyStroke){  
-isNetscape=(document.getElementById && !document.all);
-touche = (isNetscape) ? keyStroke.which : event.keyCode;
-if ((touche==37))
-{dx=0;}
-if ((touche==39))
-{dx=0;}
-}
+        isNetscape=(document.getElementById && !document.all);
+        touche = (isNetscape) ? keyStroke.which : event.keyCode;
+        if ((touche==37))
+        {dx=-5;}
+        if ((touche==39))
+        {dx=5;}
+        if ((touche==38) && (t==-50)){t=-12;}
+        }
+        
+        function getKeyend(keyStroke)    {  
+        isNetscape=(document.getElementById && !document.all);
+        touche = (isNetscape) ? keyStroke.which : event.keyCode;
+        if ((touche==37))
+        {dx=0;}
+        if ((touche==39))
+        {dx=0;}
+        }

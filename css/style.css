@@ -1,36 +1,31 @@
 
-body{
-        background-color: #6b9efc ;
-        /*background-image: url("../images/bg.gif");*/
-        background-attachment: fixed;
-        position: relative;
-        
-    }
-
-.button{
-            width: 90px;
-            height: 30px;
-            transition-duration: 0.4s;  
+        body{
+                background-color: #6b9efc ;
+                /*background-image: url("../images/bg.gif");*/
+                background-attachment: fixed;
+                position: relative;
+                
         }
 
-.button:hover{
-            background-color: #4CAF50;
-            color: white;
-            }
+        .button{
+                width: 90px;
+                height: 30px;
+                transition-duration: 0.4s;  
+                }
+
+        .button:hover{
+                background-color: #4CAF50;
+                color: white;
+                }
 
 
 
-    #hero
-    {
-            position:absolute;
-            top:150px;
-            left:40px;
-    }
-
-    .hero
-    {
-            width:40px;
+        #hero
+        {
+                position:absolute;
+                top:170px;
+                left:40px;
+        }
 
 
-    }
 
