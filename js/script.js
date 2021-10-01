@@ -69,7 +69,8 @@ function play(){
     if (x>=1480){
         let fin = Date.now();
         let duree = fin - debut;
-        alert('Bravo! tu as gagne ce niveau! Avec un temps de: '+ durre+ ' millisecondes');
+        var seconds = ((duree % 60000) / 1000).toFixed(0);
+        alert('Bravo! tu as gagne ce niveau! Avec un temps de: '+ seconds+ ' secondes');
     
         this.location='index.html';
     }
@@ -77,7 +78,8 @@ function play(){
         if ((t==-50)&&(crocs[Math.round(x/19.5)]!=300)&&(crocs[Math.round(x/19.5)]!=301)||(y-dy>350)){
             let fin = Date.now();
             let duree = fin - debut;
-            alert('Tu as perdu ! Avec un score de:'+ (x-70)+' et un temps de: '+ duree+' millisecondes');
+            var seconds = ((duree % 60000) / 1000).toFixed(0);
+            alert('Tu as perdu ! Avec un score de:'+ (x-70)+' et un temps de: '+ seconds+' secondes');
         
             x=40;
             pos=0;
